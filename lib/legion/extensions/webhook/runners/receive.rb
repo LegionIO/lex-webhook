@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'json'
+require 'legion/json'
 require 'legion/extensions/webhook/helpers/signature'
 
 module Legion
@@ -43,10 +43,10 @@ module Legion
             return body if body.nil? || body.empty?
 
             content_type = headers.transform_keys { |key| key.to_s.downcase }['content-type'].to_s
-            return ::JSON.parse(body, symbolize_names: true) if content_type.include?('json')
+            return Legion::JSON.load(body) if content_type.include?('json')
 
             body
-          rescue ::JSON::ParserError
+          rescue StandardError
             body
           end
         end
