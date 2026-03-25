@@ -42,6 +42,24 @@ client.list_endpoints
 client.remove_endpoint(path: '/hooks/github')
 ```
 
+## Runners
+
+- **Receive** - Parse incoming webhook body, detect HMAC signature from headers, return `{ received:, path:, method:, payload:, verified: }`
+- **Verify** - Verify an HMAC signature against a secret and payload; compute a signature for outgoing use
+- **Endpoints** - In-memory endpoint registry: register, list, and remove webhook paths with associated secrets
+
+Signature headers checked (in order): `x-hub-signature-256`, `x-hub-signature`, `x-signature`, `x-webhook-signature`.
+
+## Requirements
+
+- Ruby >= 3.4
+- [LegionIO](https://github.com/LegionIO/LegionIO) framework
+
+## Related
+
+- [LegionIO](https://github.com/LegionIO/LegionIO) - Framework
+- [lex-github](https://github.com/LegionIO/lex-github) - GitHub integration that uses webhook-style event delivery
+
 ## License
 
 MIT
