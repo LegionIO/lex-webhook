@@ -10,7 +10,7 @@ Legion Extension that receives incoming webhooks, verifies HMAC signatures, and 
 
 **GitHub**: https://github.com/LegionIO/lex-webhook
 **License**: MIT
-**Version**: 0.1.0
+**Version**: 0.1.2
 
 ## Architecture
 
@@ -33,9 +33,9 @@ No explicit actors directory and no AMQP transport — this extension exposes it
 |-------|-------|
 | Gem name | `lex-webhook` |
 | Module | `Legion::Extensions::Webhook` |
-| Version | `0.1.0` |
+| Version | `0.1.2` |
 | Ruby | `>= 3.4` |
-| Runtime deps | `json` (stdlib) |
+| Runtime deps | legion sub-gems (cache, crypt, data, json, logging, settings, transport) |
 | License | MIT |
 
 ## Runner Details
