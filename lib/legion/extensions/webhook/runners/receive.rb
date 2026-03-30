@@ -46,7 +46,7 @@ module Legion
             return Legion::JSON.load(body) if content_type.include?('json')
 
             body
-          rescue StandardError
+          rescue StandardError => _e
             body
           end
         end
