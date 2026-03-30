@@ -9,7 +9,7 @@ module Legion
         module Signature
           module_function
 
-          def verify(secret:, signature:, payload:, algorithm: 'sha256') # rubocop:disable Naming/PredicateMethod
+          def verify(secret:, signature:, payload:, algorithm: 'sha256')
             computed = compute(secret: secret, payload: payload, algorithm: algorithm)
             bytes_match?(computed, signature)
           end

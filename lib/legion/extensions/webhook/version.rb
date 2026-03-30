@@ -3,7 +3,7 @@
 module Legion
   module Extensions
     module Webhook
-      VERSION = '0.1.2'
+      VERSION = '0.1.3'
     end
   end
 end
